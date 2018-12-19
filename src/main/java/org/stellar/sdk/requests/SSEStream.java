@@ -180,7 +180,7 @@ public class SSEStream<T extends org.stellar.sdk.responses.Response> implements 
 
     @Override
     public void onEvent(EventSource eventSource, @Nullable String id, @Nullable String type, String data) {
-      if (data.equals("\"hello\"") || data.equals("\"goodbye\"")) {
+      if (data.equals("\"hello\"") || data.equals("\"goodbye\"") || data.equals("\"byebye\"")) {
         return;
       }
       T event = GsonSingleton.getInstance().fromJson(data, responseClass);
